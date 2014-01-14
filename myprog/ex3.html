@@ -3,12 +3,18 @@
 	<head>
 		<title>a_ex3</title>
 		<meta charset="UTF-8">
+		<style>
+			.width{width:300px;height:201px;margin:auto}
+			.style1{width:300px;height:50px}
+			.style2{width:190px;height:150px}
+			.style3{width:100px;height:150px}
+		</style>
 	</head>
-	<frameset rows="20%,*">
-  		<frame src="ex3_a.html"/>
-  		<frameset cols="60%,40%">
-    			<frame src="ex3_b.html"/>
-    			<frame src="ex3_c.html"/>
-  		</frameset>
-	</frameset>
+	<body>
+		<fieldset class="width">
+			<iframe src="ex3_a.html" class="style1"></iframe>
+			<iframe src="ex3_b.html" class="style2"></iframe>
+			<iframe src="ex3_c.html" class="style3"></iframe>	
+		</fieldset>
+	</body>
 </html>
