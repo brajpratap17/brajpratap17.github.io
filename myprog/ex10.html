@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>exercise10</title>
+		<meta charset="UTF-8">
+		<style>
+			.width{width:300px;margin:auto}
+			.alt{width:50px}
+		</style>
+	</head>
+	<body>
+		<fieldset class="width">
+			<table>
+				<tr>
+					<td>
+						Name:
+					</td>
+					<td>
+						<input type="text" name="txt_name">
+					</td>						
+				</tr>
+				<tr>
+					<td>
+						Address:
+					</td>
+					<td>
+						<input type="text" name="txt_add">
+					</td>						
+				</tr>
+				<tr>
+					<td>
+						City:
+					</td>
+					<td>
+						<input type="text" name="txt_city">
+					</td>						
+				</tr>
+				<tr>
+					<td>
+						State:
+					</td>
+					<td>
+						<input type="text" name="txt_state" class="alt">
+					</td>						
+				</tr>
+				<tr>
+					<td>
+						Zip:
+					</td>
+					<td>
+						<input type="text" name="txt_zip" class="alt">
+					</td>						
+				</tr>
+				<tr>
+					<td>
+						Magazine:
+					</td>
+					<td>
+						<select name="magazines">
+							<option value="a">a</option>
+							<option value="b">b</option>
+							<option value="c" selected>Newsweek</option>
+							<option value="d">c</option>
+						</select>
+					</td>						
+				</tr>
+				<tr>
+					<td>
+						Subscription:
+					</td>
+					<td>
+						<input type="radio" name="subscr" value="1year">1 year
+						<input type="radio" name="subscr" value="2year">2 year
+					</td>						
+				</tr>
+				<tr>
+					<td colspan=2>
+						Additional Comments:<br/>
+						<textarea rows="5" cols="30">
+						</textarea>
+					</td>						
+				</tr>
+				<tr>
+					<td colspan=2>
+						<input type="button" name="btn_send" value="Send Your Order">
+					</td>						
+				</tr>
+			</table>
+		</fieldset>
+	</body>
+</html>
