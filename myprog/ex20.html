@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>exercise20</title>
+		<meta charset="UTF-8">
+		<script>
+			var str=new Array();
+			var n;
+			function limit()
+			{
+				n=prompt("enter limit of array");
+				for(var i=0;i<n;i++)
+				{
+					str[i]=prompt("enter the "+ i +" element");
+				}		
+			}
+			function findLongestWord()
+			{
+				var pos,len=0;
+				for(var i=0;i<n;i++)
+				{
+					if(str[i].length>=len)
+					{
+						len=str[i].length;
+						pos=i;
+					}				
+				}
+				return str[pos];
+			}		
+		</script>
+	</head>
+	<body onload="limit()">
+		<input type="button" value="longest word" onclick="alert(findLongestWord())">
+	</body>
+</html>
