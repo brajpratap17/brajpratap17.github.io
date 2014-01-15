@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>exercise17</title>
+		<meta charset="UTF-8">
+		<script>
+			var arr=new Array();
+			var n;
+			function limit()
+			{
+				n=prompt("enter limit of array");
+				for(var i=0;i<n;i++)
+				{
+					arr[i]=prompt("enter the "+ i +" element");
+				}		
+			}
+			function sum()
+			{
+				var res=0;
+				for(var i=0;i<n;i++)
+				{
+					res=res+parseInt(arr[i]);
+				}
+				return res;	
+			}
+			function mul()
+			{
+				var res=1;
+				for(var i=0;i<n;i++)
+				{
+					res=res*parseInt(arr[i]);
+				}	
+				return res;
+			}		
+		</script>
+	</head>
+	<body onload="limit()">
+		<input type="button" value="sum" onclick="alert(sum())">
+		<input type="button" value="mul" onclick="alert(mul())">
+	</body>
+</html>
