@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>exercise18</title>
+		<meta charset="UTF-8">
+		<script>
+			function rev()
+			{
+				var str=new String();
+				var input=prompt("enter string");
+				for(var i=input.length;i>=0;i--)
+				{
+					str=str.concat(input.charAt(i));		
+				}
+				return str;
+			}		
+		</script>
+	</head>
+	<body>
+		<input type="button" value="reverse" onclick="alert(rev())">
+	</body>
+</html>
