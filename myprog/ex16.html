@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>exercise16</title>
+		<meta charset="UTF-8">
+		<script>
+			function check()
+			{
+				var a;
+				var b;
+				var c=new String();
+				b=prompt("input a string");
+				for(var i=0;i<b.length;i++)
+				{
+					a=b.charAt(i);
+					if(a=='a' || a=='e' || a=='i' || a=='o' || a=='u' || a=='A' || a=='E' || 						a=='I' || a=='O' || a=='U')
+					{
+						c=c.concat(a);
+					}
+					else if(a==" ")
+					{
+						c=c.concat(" ");
+					}
+					else
+					{
+						c=c.concat(a);
+						c=c.concat("o");
+						c=c.concat(a);
+					}
+				}
+				return c;
+			}		
+		</script>
+	</head>
+	<body>
+		<input type="button" value="click" onclick="alert(check())">
+	</body>
+</html>
