@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>exercise22</title>
+		<meta charset="UTF-8">
+		<script>
+			function charfreq()
+			{
+				var freq=new Array();
+				var char=new Array();
+				var char1,flag;
+				var str=prompt("enter string");
+				for(var i=0;i<str.length;i++)
+				{
+					freq[i]=0;
+				}
+				for(var i=0;i<str.length;i++)
+				{
+					for(var i=0;i<str.length;i++)
+					{
+						flag=0;
+						char1=str.charAt(i);
+						for(var j=0;j<str.length;j++)
+						{
+							if(char1==char[j])
+							{
+								freq[j]=freq[j]+1;
+								flag=1;
+							}	
+						}
+						if(flag==0)
+						{
+							char[i]=char1;
+							freq[i]=freq[i]+1;
+						}
+					}
+				}
+				document.write("String is : "+str+"<br/>");
+				for(var i=0;i<char.length;i++)
+				{
+					if(freq[i]!=0)
+					{
+						document.write(char[i]+" : "+freq[i]+"<br/>");
+					}
+				}
+			}	
+		</script>
+	</head>
+	<body onload="charfreq()">
+	</body>
+</html>
