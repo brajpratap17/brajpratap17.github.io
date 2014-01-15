@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>exercise21</title>
+		<meta charset="UTF-8">
+		<script>
+			var str=new Array();
+			var n,filter;
+			function limit()
+			{
+				n=prompt("enter limit of array");
+				for(var i=0;i<n;i++)
+				{
+					str[i]=prompt("enter the "+ i +" element");
+				}
+				filter=prompt("enter the filter");		
+			}
+			function filterLongestWords()
+			{
+				var fltr_str=new Array();
+				var j=0;
+				for(var i=0;i<n;i++)
+				{
+					if(str[i].length>filter)
+					{
+						fltr_str[j]=str[i];
+						j++;
+					}				
+				}
+				return fltr_str;
+			}		
+		</script>
+	</head>
+	<body onload="limit()">
+		<input type="button" value="longest words" onclick="alert(filterLongestWords())">
+	</body>
+</html>
