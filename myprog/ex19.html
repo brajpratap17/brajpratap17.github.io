@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>exercise19</title>
+		<meta charset="UTF-8">
+		<script>
+			function converter()
+			{
+				var eng=new Array("merry","christmas","and","happy","new","year");
+				var swe=new Array("god","jul","och","gott","nytt","ar");
+				var char=new String();
+				var char1,flag=0,k=0;
+				var char2=new Array();
+				var str=prompt("enter string");
+				for(var i=0;i<str.length;i++)
+				{
+					flag=0;
+					char1=str.charAt(i);
+					if(char1!=" ")
+					{
+						char=char.concat(char1);	
+					}	
+					if(char1==" " || i==((str.length-1)))
+					{
+						for(var j=0;j<eng.length;j++)
+						{
+							if(eng[j]==char)
+							{
+								char2[k]=swe[j];
+								flag=1;
+							}
+								
+						}
+						if(flag==0)
+						{
+							char2[k]=char;
+						}
+						char="";
+						k++;
+					}
+				}
+				for(var i=0;i<char2.length;i++)
+				{
+					document.write(char2[i]+" ");
+				}
+			}	
+		</script>
+	</head>
+	<body onload="converter()">
+	</body>
+</html>
