@@ -1,126 +1,64 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>exercise</title>
-		<meta charset="UTF-8">
-		<style>
-			select{height:90px;width:100px}
-		</style>
-		<script>
-			function selecte()
-			{
-				var InvForm = document.forms.form;
-				var elem = new Array();
-				var elem1 = new Array();
-     				var x = 0,count=0,flag;
-     				for (x=0;x<InvForm.kb.length;x++)
-         			{
-            				if(InvForm.kb[x].selected)
-            				{
-             					elem[count] = InvForm.kb[x].text;
-						InvForm.kb[x].text="";
-						count++;
-            				}
-         			}
-				for (x=0;x<InvForm.kb1.length;x++)
-         			{
-					if(InvForm.kb1[x].text!="")
+        <head>
+                <title>exercise</title>
+                <meta charset="UTF-8">
+                <style>
+                        select{height:90px;width:100px}
+                </style>
+                <script>
+                        function selecte(a,b)
+                        {
+                                var Invsl = document.getElementById(a);
+				var Invsl1 = document.getElementById(b);
+                                var elem = new Array();
+                                var x;
+                                for (x=0;x<Invsl.length;x++)
+                                {
+                                 	if(Invsl[x].selected)
+                                        {	
+                         	                elem.push(Invsl[x].text);
+                              	        }
+                             	}
+				for (x=Invsl.length;x>=0;x--)
+                                {
+					for(var y=0;y<Invsl.length;y++)
 					{
-             					elem1[x] = InvForm.kb1[x].text;
+                                 		if(Invsl[y].text==elem[x])
+                                  		{
+							Invsl.remove(y);
+                              	        	}
 					}
-         			}
-				for(x=0;x<elem1.length;x++)
-				{
-					flag=0;
-					for(var y=0;y<elem.length;y++)
-					{
-						if(elem1[x]==elem[y])
-						{
-							flag=1;
-						}
-					}
-					if(flag==0)
-					{
-						elem[elem.length]=elem1[x];
-					}
-				}
+                             	}
+				for (x=0;x<Invsl1.length;x++)
+                                {
+                         		elem.push(Invsl1[x].text);
+                             	}
+				for (x=Invsl1.length;x>=0;x--)
+                                {
+					Invsl1.remove(x);
+                             	}
 				elem.sort();
-				count=0;
-				for(x=0;x<elem.length;x++)
-				{
-					if(elem[x]!="")
-					{
-						InvForm.kb1[count].text=elem[x];
-						count++;	
-					}
-				}
+				for (x=0;x<elem.length;x++)
+                                {
+ 					var op=document.createElement("option");
+					op.text=elem[x];
+					Invsl1.add(op);	
+                             	}	
 			}
-			function selecte1()
-			{
-				var InvForm = document.forms.form;
-				var elem = new Array();
-				var elem1 = new Array();
-     				var x = 0,count=0,flag;
-     				for (x=0;x<InvForm.kb1.length;x++)
-         			{
-            				if(InvForm.kb1[x].selected)
-            				{
-             					elem[count] = InvForm.kb1[x].text;
-						InvForm.kb1[x].text="";
-						count++;
-            				}
-         			}
-				for (x=0;x<InvForm.kb.length;x++)
-         			{
-					if(InvForm.kb[x].text!="")
-					{
-             					elem1[x] = InvForm.kb[x].text;
-					}
-         			}
-				for(x=0;x<elem1.length;x++)
-				{
-					flag=0;
-					for(var y=0;y<elem.length;y++)
-					{
-						if(elem1[x]==elem[y])
-						{
-							flag=1;
-						}
-					}
-					if(flag==0)
-					{
-						elem[elem.length]=elem1[x];
-					}
-				}
-				elem.sort();
-				count=0;
-				for(x=0;x<elem.length;x++)
-				{
-					if(elem[x]!="")
-					{
-						InvForm.kb[count].text=elem[x];
-						count++;	
-					}
-				}	
-			}	
-		</script>
-	</head>
-	<body><form name="form">
-		<select name="kb" id="kb" multiple>
-  			<option>America</option>
-  			<option>India</option>
-  			<option>Canada</option>
-  			<option>Jait</option>
-			<option>Matura</option>
-		</select>
-		<input type="button" value="<<" name="btn1" onclick="selecte1()">
-		<input type="button" value=">>" name="btn2" onclick="selecte()">
-		<select name="kb1" id="kb1" multiple>
-  			<option></option>
-  			<option></option>
-  			<option></option>
-  			<option></option>
-			<option></option>
-		</select>
-	</form></body>
+                </script>
+        </head>
+        <body>
+                <select name="kb" id="kb" multiple>
+                       	<option>America</option>
+                       	<option>India</option>
+                       	<option>Canada</option>
+                       	<option>Jait</option>
+                	<option>Mathura</option>
+                </select>
+                <input type="button" value="<<" name="btn1" onclick="selecte(kb1.id,kb.id)">
+                <input type="button" value=">>" name="btn2" onclick="selecte(kb.id,kb1.id)">
+                <select name="kb1" id="kb1" multiple>
+                </select>
+        </body>
 </html>
