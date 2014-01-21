@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>exercise</title>
+                <meta charset="UTF-8">
+                <script>
+                        function add_row()
+                        {
+				var table = document.getElementById("tb");
+				var row = table.insertRow(1);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				cell1.innerHTML = "";
+				cell2.innerHTML = "";
+				cell3.innerHTML='<input type="button" name="btn_add" value="edit" id="first" onclick="edit(this)">'+'<input 					type="button" name="btn_add" value="delete" id="sec" onclick="delet(this)">';
+			}
+			function edit(r)
+			{
+				var table = document.getElementById("tb");
+				var i = r.parentNode.parentNode.rowIndex;
+				var row=table.rows[i];
+				var a=row.childNodes[0].innerHTML;
+				var b=row.childNodes[1].innerHTML;
+				row.childNodes[0].innerHTML='<input type="text" name="txt_name">';
+				row.childNodes[1].innerHTML='<input type="text" name="txt_email">';
+				row.childNodes[2].innerHTML='<input type="button" name="btn_save" value="save" onclick="save(this)">';
+				row.childNodes[0].childNodes[0].value=a;
+				row.childNodes[1].childNodes[0].value=b;			
+			}
+			function delet(r)
+			{
+				r.parentNode.parentNode.remove();
+			}
+			function save(r)
+			{
+				var table = document.getElementById("tb");
+				var i = r.parentNode.parentNode.rowIndex;
+				var row=table.rows[i];
+				row.childNodes[0].innerHTML=row.childNodes[0].childNodes[0].value;
+				row.childNodes[1].innerHTML=row.childNodes[1].childNodes[0].value;
+				row.childNodes[2].innerHTML='<input type="button" name="btn_add" value="edit" onclick="edit	(this)">'+'<input type="button" name="btn_add" value="delete" onclick="delet(this)">';
+			}
+                </script>
+        </head>
+        <body>
+        	<table border=1 id="tb">
+			<tr>
+				<th>Name</th>
+				<th>E-mail</th>
+				<th>Action</th>
+			</tr>
+		</table><br/>
+		<input type="button" name="btn_add" value="add row" onclick="add_row()">	  
+        </body>
+</html>
