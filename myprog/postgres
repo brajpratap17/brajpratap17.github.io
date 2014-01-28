@@ -1,0 +1,20 @@
+DB-supplier_parts_db
+tables-s,p,sp	
+1(a).select distinct sname from S left join sp on s.S_NO=sp.S_NO where p_no='p2';
+1(b).select distinct sname from S left join sp on s.S_NO=sp.S_NO where p_no in (select p_no from p where color='Red');
+1(c).select SNAME from s where S_NO in (select S_NO from sp group by(S_NO) having count(S_NO)=(select count(P_NO) from p));
+1(d).select distinct SNAME from s left join sp on s.S_NO=sp.S_NO AND sp.P_NO='p2' WHERE sp.P_NO is NULL;
+
+DB-sandwiches
+tables-tastes,locations,sandwiches
+2(i).select address from locations where lname in (select location from sandwiches where filling in (select filling from tastes where name='jones'));
+2(ii).select address from locations left join sandwiches on (lname=location) where filling in (select filling from tastes where name='jones');
+2(iii).select distinct location,count(distinct name) from sandwiches left join tastes on tastes.filling=sandwiches.filling group by location;
+
+DB-library
+tables-branch,title,holdings
+3(i).select title from title where publisher='macmillan';
+3(ii).select distinct branch from holdings where title in (select title from title where author='ann brown');
+3(iii).select distinct branch from holdings left join title on holdings.title=title.title where author='ann brown';
+3(iv).select branch,count(title) from holdings group by branch;
+
