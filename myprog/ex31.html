@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>exercise31</title>
+		<meta charset="UTF-8" />
+		<style>
+			.master{border:1px solid;height:680px}
+			.header-footer{height:50px;background:#FF0000}
+			.body{height:580px}
+			.menu{margin-left:350px}
+			ul{margin:0;padding:0}
+			li ul{display:none}
+			li{
+					display:block;
+					float:left;
+					color:#996666;
+					background:#FFFFFF;
+					border:1px solid #909090;
+					width:130px;
+					height:20px;
+					font-weight:bold;
+					cursor:pointer;
+				}
+			li:hover{
+					background:#FF0000;
+					color:#FFFFFF;	
+				}
+			li:hover .popup{
+					display:block;
+				}
+			li:hover ul li:hover ul{
+					display:block;
+					padding-left:130px;
+					margin-top:-20px		
+				}
+		</style>
+	</head>
+	<body>
+		<div class="master">
+			<div class="header-footer">
+				<ul class="menu">
+      					<li>Home</li>
+      					<li>About</li>
+      					<li>Services
+        					<ul class="popup">
+        						<li>Web Design</li>
+       							<li>Internet marketing</li>
+        						<li>testing >
+								<ul>
+        								<li>test 1</li>
+       									<li>test 2</li>
+									<li>test 3</li>
+        								<li>testing ></li>
+        								<li>test 4</li>
+									<li>test 5</li>
+        							</ul>
+							</li>
+        						<li>Hosting</li>
+        						<li>Domain Names</li>
+							<li>Broadband</li>
+        					</ul>
+      					</li>
+      					<li>Contact Us</li>
+    				</ul>
+			</div>
+			<div class="body">
+				some text is cause scrolling:
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+				<p>some text is cause scrolling:</p>
+			</div>
+			<div class="header-footer">
+			</div>
+		<div>
+	</body>
+</html>
